@@ -1,0 +1,38 @@
+﻿/*.table > tbody tr {
+    border-radius: 4px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    border-bottom: 1px solid #e0e6ed;
+}*/
+
+.card-body-top {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 2.25rem 2.25rem 0 2.25rem;
+}
+.badge {
+    background: transparent;
+}
+.hover:hover {
+    background: #ebedf3;
+}
+
+.badge-primary {
+    color: #1b55e2;
+    border: 2px dashed #1b55e2;
+}
+
+.badge-warning {
+    color: #e2a03f;
+    border: 2px dashed #e2a03f;
+}
+
+ .badge-danger {
+    color: #e7515a;
+    border: 2px dashed #e7515a;
+}
+ .star-required {
+     color: red;
+ }

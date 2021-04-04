@@ -1,0 +1,6 @@
+C:\Users\shema\source\repos\POS\POS.Data\bin\Debug\POS.Data.dll
+C:\Users\shema\source\repos\POS\POS.Data\bin\Debug\POS.Data.pdb
+C:\Users\shema\source\repos\POS\POS.Data\obj\Debug\POS.Data.csprojAssemblyReference.cache
+C:\Users\shema\source\repos\POS\POS.Data\obj\Debug\POS.Data.csproj.CoreCompileInputs.cache
+C:\Users\shema\source\repos\POS\POS.Data\obj\Debug\POS.Data.dll
+C:\Users\shema\source\repos\POS\POS.Data\obj\Debug\POS.Data.pdb

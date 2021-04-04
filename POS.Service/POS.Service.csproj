@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{539F244C-AB4D-4105-B68D-E096551D19B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>POS.Service</RootNamespace>
+    <AssemblyName>POS.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IService\IAsideSectionService.cs" />
+    <Compile Include="IService\IAsideService.cs" />
+    <Compile Include="IService\IBrandService.cs" />
+    <Compile Include="IService\ICategoryService.cs" />
+    <Compile Include="IService\IFinancialYearService.cs" />
+    <Compile Include="IService\IProductService.cs" />
+    <Compile Include="IService\IRoleBaseMenuPermissionService.cs" />
+    <Compile Include="IService\ISectionService.cs" />
+    <Compile Include="IService\IShopService.cs" />
+    <Compile Include="IService\ISubCategoryService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\AsideSectionService.cs" />
+    <Compile Include="Service\AsideService.cs" />
+    <Compile Include="Service\BrandService.cs" />
+    <Compile Include="Service\CategoryService.cs" />
+    <Compile Include="Service\FinancialYearService.cs" />
+    <Compile Include="Service\ProductService.cs" />
+    <Compile Include="Service\RoleBaseMenuPermissionService.cs" />
+    <Compile Include="Service\SectionService.cs" />
+    <Compile Include="Service\ShopService.cs" />
+    <Compile Include="Service\SubCategoryService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\POS.Data\POS.Data.csproj">
+      <Project>{c80dc10a-ac72-4940-8cae-7b160356c25e}</Project>
+      <Name>POS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POS.Repository\POS.Repository.csproj">
+      <Project>{8a1d6aeb-3c00-4d80-a085-654c39777238}</Project>
+      <Name>POS.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POS.ViewModel\POS.ViewModel.csproj">
+      <Project>{0b83b604-2726-48af-a8ae-8f6f192f1b3f}</Project>
+      <Name>POS.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

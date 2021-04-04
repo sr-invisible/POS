@@ -1,0 +1,41 @@
+﻿@model POS.Models.VerifyCodeViewModel
+@{
+    ViewBag.Title = "Verify";
+    Layout = "~/Views/Account/_Layout.cshtml";
+}
+<!--begin::verify code form-->
+<div class="login-signin">
+    <div class="mb-20">
+        <h3>@ViewBag.Title</h3>
+        <p class="opacity-60 font-weight-bold">Enter verification code</p>
+    </div>
+    @using (Html.BeginForm("VerifyCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("provider", @Model.Provider)
+        @Html.Hidden("rememberMe", @Model.RememberMe)
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.Code, new { @class = "form-control h-auto text-white placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5", @placeholder = "Email", @name = "username" })
+            @Html.ValidationMessageFor(m => m.Code, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group d-flex flex-wrap justify-content-between align-items-center px-8">
+            <div class="checkbox-inline">
+                <label class="checkbox checkbox-outline checkbox-white text-white m-0">
+                    @Html.CheckBoxFor(m => m.RememberBrowser)
+                    <span></span>@Html.LabelFor(m => m.RememberBrowser, new { @class = "checkbox checkbox-outline checkbox-white text-white m-0" })
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group text-center mt-10">
+            <input type="submit" class="btn btn-pill btn-outline-white font-weight-bold opacity-90 px-15 py-3" value="Submit" />
+        </div>
+    }
+</div>
+<!--end::verify code form-->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

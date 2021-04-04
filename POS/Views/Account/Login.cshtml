@@ -1,0 +1,55 @@
+﻿@using POS.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Account/_Layout.cshtml";
+}
+
+<!--begin::Login Sign in form-->
+<div class="login-signin">
+    <div class="mb-20">
+        <h3>@ViewBag.Title To Admin</h3>
+        <p class="opacity-60 font-weight-bold">Enter your details to login to your account:</p>
+    </div>
+
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @*@Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })*@
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control h-auto text-white placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5", @placeholder = "Enter Email", @name = "email" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @*@Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })*@
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control h-auto text-white placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5", @type = "password", @placeholder = "Enter Password", @name = "password" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group d-flex flex-wrap justify-content-between align-items-center px-8">
+            <div class="checkbox-inline">
+                <label class="checkbox checkbox-outline checkbox-white text-white m-0">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    <span></span>@Html.LabelFor(m => m.RememberMe, new { @class = "checkbox checkbox-outline checkbox-white text-white m-0" })
+                </label>
+            </div>
+            <a href="@Url.Action("ForgotPassword","Account")" id="kt_login_forgot" class="text-white font-weight-bold">Forget Password ?</a>
+        </div>
+
+        <div class="form-group text-center mt-10">
+            <button type="submit" class="btn btn-pill btn-outline-white font-weight-bold opacity-90 px-15 py-3">Sign In</button>
+        </div>
+    }
+    <div class="mt-10">
+        <span class="opacity-70 mr-4">Don't have an account yet?</span>
+        <a href="@Url.Action("Register","Account")" class="text-white font-weight-bold">Sign Up</a>
+    </div>
+</div>
+<!--end::Login Sign in form-->
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

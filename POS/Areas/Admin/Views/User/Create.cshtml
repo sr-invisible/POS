@@ -1,0 +1,187 @@
+﻿@model POS.ViewModels.User.UserViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<!--begin::Content-->
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Subheader-->
+    <div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
+        <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+            <!--begin::Info-->
+            <div class="d-flex align-items-center flex-wrap mr-1">
+                <!--begin::Page Heading-->
+                <div class="d-flex align-items-baseline flex-wrap mr-5">
+                    <!--begin::Page Title-->
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">Dashboard</h5>
+                    <!--end::Page Title-->
+                    <!--begin::Breadcrumb-->
+                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                        <li class="breadcrumb-item">
+                            <a href="" class="text-muted">User</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="" class="text-muted">Add User</a>
+                        </li>
+                    </ul>
+                    <!--end::Breadcrumb-->
+                </div>
+                <!--end::Page Heading-->
+            </div>
+            <!--end::Info-->
+        </div>
+    </div>
+    <!--end::Subheader-->
+    <!--begin::Entry-->
+    <div class="d-flex flex-column-fluid">
+        <!--begin::Container-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <!--begin::Card-->
+                        <div class="card card-custom gutter-b example example-compact">
+                            <div class="card-header flex-wrap py-5">
+                                <div class="card-title">
+                                    <h3 class="card-label">
+                                        User
+                                        <span class="d-block pt-2 font-size-sm">All star marked ( <span class="text-danger">*</span> ) fields are mandatory, please fill up all mandatory fields.</span>
+                                    </h3>
+                                </div>
+                                <div class="card-toolbar">
+                                    <!--begin::Button-->
+                                    <a href="@Url.Action("Index", "User", new { area = "Admin"})" class="btn btn-primary font-weight-bolder">
+                                        <span class="svg-icon svg-icon-md">
+                                            <!--begin::Svg Icon | Flatten.svg-->
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                 height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24"></rect>
+                                                    <path d="M10,4 L21,4 C21.5522847,4 22,4.44771525 22,5 L22,7 C22,7.55228475 21.5522847,8 21,8 L10,8 C9.44771525,8 9,7.55228475 9,7 L9,5 C9,4.44771525 9.44771525,4 10,4 Z M10,10 L21,10 C21.5522847,10 22,10.4477153 22,11 L22,13 C22,13.5522847 21.5522847,14 21,14 L10,14 C9.44771525,14 9,13.5522847 9,13 L9,11 C9,10.4477153 9.44771525,10 10,10 Z M10,16 L21,16 C21.5522847,16 22,16.4477153 22,17 L22,19 C22,19.5522847 21.5522847,20 21,20 L10,20 C9.44771525,20 9,19.5522847 9,19 L9,17 C9,16.4477153 9.44771525,16 10,16 Z"
+                                                          fill="#000000"></path>
+                                                    <rect fill="#000000" opacity="0.3" x="2" y="4" width="5" height="16" rx="1"></rect>
+                                                </g>
+                                            </svg>
+                                            <!--end::Svg Icon-->
+                                        </span>Back to List
+                                    </a>
+                                    <!--end::Button-->
+                                </div>
+                            </div>
+
+                            <!--begin::Form-->
+                            <form class="form">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                <div class="col-md-12">
+                                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter first name" } })
+                                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                <div class="col-md-12">
+                                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Email" } })
+                                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                <div class="col-md-12">
+                                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter password", type = "password" } })
+                                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                <div class="col-md-12">
+                                                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter confirm password", type = "password" } })
+                                                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                <div class="col-md-12">
+                                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter last name" } })
+                                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                <div class="col-md-12">
+                                                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter phone number" } })
+                                                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                <div class="col-md-12">
+                                                    @Html.DropDownListFor(model => model.Role, new SelectList(ViewBag.Roles, "value", "Text"), "-- select role --", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!--end::Form-->
+                        </div>
+                        <!--end::Card-->
+                    }
+                </div>
+            </div>
+        </div>
+        <!--end::Container-->
+    </div>
+    <!--end::Entry-->
+</div>
+<!--end::Content-->
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    @*<script>
+        // Get All Area in this project
+        $("#Roles").empty();
+        var rolesNameText = '<option value="">-- select Role --</option>';
+        rolesNameText += '<option value="">None</option>';
+
+        $.ajax({
+            type: "Get",
+            url: ("/Admin/User/GetAllRole"),
+            contentType: "application/json"
+        }).done(function (data) {
+            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                rolesNameText += `<option value="` + data[i].Id + `" >` + data[i].Name + `</option>`;
+            }
+            $("#Roles").append(rolesNameText);
+        });
+    </script>*@
+}
+
+

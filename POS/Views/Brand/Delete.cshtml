@@ -1,0 +1,146 @@
+﻿@model POS.ViewModel.Brand.BrandViewModel
+@{
+    ViewBag.Title = "Delete";
+    var role = User.IsInRole("Super Admin");
+    if (role == true)
+    {
+        Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<!--begin::Content-->
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Subheader-->
+    <div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
+        <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+            <!--begin::Info-->
+            <div class="d-flex align-items-center flex-wrap mr-1">
+                <!--begin::Page Heading-->
+                <div class="d-flex align-items-baseline flex-wrap mr-5">
+                    <!--begin::Page Title-->
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">Dashboard</h5>
+                    <!--end::Page Title-->
+                    <!--begin::Breadcrumb-->
+                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                        <li class="breadcrumb-item">
+                            <a href="" class="text-muted">Brand</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="" class="text-muted">Brand Details</a>
+                        </li>
+                    </ul>
+                    <!--end::Breadcrumb-->
+                </div>
+                <!--end::Page Heading-->
+            </div>
+            <!--end::Info-->
+        </div>
+    </div>
+    <!--end::Subheader-->
+    <!--begin::Entry-->
+    <div class="d-flex flex-column-fluid">
+        <!--begin::Container-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--begin::Card-->
+                    <div class="card card-custom gutter-b example example-compact">
+                        <div class="card-header flex-wrap py-5">
+                            <div class="card-title">
+                                <h3 class="card-label">
+                                    Brand Details
+                                </h3>
+                            </div>
+                            <div class="card-toolbar">
+                                <div class="example-tools justify-content-center">
+                                    <!--begin::Button-->
+                                    <a href="@Url.Action("Edit", "Brand", new { id = Html.ValueFor(model => model.Id), area= ""})" class="btn btn-primary font-weight-bolder mr-5">
+                                        <span class="svg-icon svg-icon-warning svg-icon-md">
+                                            <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Edit.svg-->
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) " />
+                                                    <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1" />
+                                                </g>
+                                            </svg><!--end::Svg Icon-->
+                                        </span>Edit
+                                    </a>
+                                    <!--end::Button-->
+                                    <!--begin::Button-->
+                                    <a href="@Url.Action("Index", "Brand")" class="btn btn-primary font-weight-bolder">
+                                        <span class="svg-icon svg-icon-md">
+                                            <!--begin::Svg Icon | Flatten.svg-->
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                 height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24"></rect>
+                                                    <path d="M10,4 L21,4 C21.5522847,4 22,4.44771525 22,5 L22,7 C22,7.55228475 21.5522847,8 21,8 L10,8 C9.44771525,8 9,7.55228475 9,7 L9,5 C9,4.44771525 9.44771525,4 10,4 Z M10,10 L21,10 C21.5522847,10 22,10.4477153 22,11 L22,13 C22,13.5522847 21.5522847,14 21,14 L10,14 C9.44771525,14 9,13.5522847 9,13 L9,11 C9,10.4477153 9.44771525,10 10,10 Z M10,16 L21,16 C21.5522847,16 22,16.4477153 22,17 L22,19 C22,19.5522847 21.5522847,20 21,20 L10,20 C9.44771525,20 9,19.5522847 9,19 L9,17 C9,16.4477153 9.44771525,16 10,16 Z"
+                                                          fill="#000000"></path>
+                                                    <rect fill="#000000" opacity="0.3" x="2" y="4" width="5" height="16" rx="1"></rect>
+                                                </g>
+                                            </svg>
+                                            <!--end::Svg Icon-->
+                                        </span>Back to List
+                                    </a>
+                                    <!--end::Button-->
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--begin::card body-->
+                        <div class="card-body">
+                            <!-- begin: Invoice footer-->
+                            <div class="row justify-content-center bg-gray-100 py-8 px-8 py-md-10 px-md-0">
+                                <div class="col-md-9">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tbody>
+                                                @using (Html.BeginForm())
+                                                {
+                                                    @Html.AntiForgeryToken()
+                                                    <tr class="font-weight-boldest border-bottom-0 font-size-lg">
+                                                        <td class="border-top-0 pl-0 py-4" style="width: 15%">@Html.DisplayNameFor(model => model.Name)</td>
+                                                        <td class="border-top-0  py-4">@Html.DisplayFor(model => model.Name)</td>
+                                                    </tr>
+                                                    <tr class="font-weight-boldest border-bottom-0 font-size-lg">
+                                                        <td class="border-top-0 pl-0 py-4">@Html.DisplayNameFor(model => model.ImagePath)</td>
+                                                        <td class="border-top-0  py-4"> <img src="@Html.ValueFor(model => model.ImagePath)" width="45" height="45" alt="logo" /></td>
+                                                    </tr>
+                                                    <tr class="font-weight-boldest border-bottom-0 font-size-lg">
+                                                        <td class="border-top-0 pl-0 py-4">@Html.DisplayNameFor(model => model.Description)</td>
+                                                        <td class="border-top-0  py-4">@Html.DisplayFor(model => model.Description)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="submit" value="Delete" class="btn btn-danger" /></td>
+                                                    </tr>
+                                                }
+                                                </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--end::card body-->
+                    </div>
+                    <!--end::Card-->
+                </div>
+            </div>
+        </div>
+        <!--end::Container-->
+    </div>
+    <!--end::Entry-->
+</div>
+<!--end::Content-->
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

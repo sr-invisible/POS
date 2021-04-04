@@ -1,0 +1,62 @@
+﻿@model POS.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Account/_Layout.cshtml";
+}
+
+<!--begin::sign up form-->
+<div class="signup">
+    <div class="mb-20">
+        <h3>@ViewBag.Title</h3>
+        <p class="opacity-60">Enter your details to create your account</p>
+    </div>
+
+    @using (Html.BeginForm("Register", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control h-auto text-white placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5", @placeholder = "Enter first name" })
+            @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control h-auto text-white placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5", @placeholder = "Enter last name" })
+            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control h-auto text-white placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5", @placeholder = "Enter Email" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control h-auto text-white placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5", @type = "password", @placeholder = "Enter Password" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control h-auto text-white placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5", @type = "password", @placeholder = "Enter Confirm Password" })
+            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+        </div>
+        @*<div class="form-group text-left px-8">
+                <div class="checkbox-inline">
+                    <label class="checkbox checkbox-outline checkbox-white text-white m-0">
+                        <input type="checkbox" name="agree" />
+                        <span></span>I Agree the
+                        <a href="#" class="text-white font-weight-bold ml-1">terms and conditions</a>.
+                    </label>
+                </div>
+                <div class="form-text text-muted text-center"></div>
+            </div>*@
+
+        <div class="form-group text-center mt-10">
+            <button type="submit" class="btn btn-pill btn-outline-white font-weight-bold opacity-90 px-15 py-3">Sign Up</button>
+        </div>
+    }
+    <div class="mt-10">
+        <a href="@Url.Action("Login","Account")" class="text-white font-weight-bold">I already have a membership</a>
+    </div>
+</div>
+<!--end::sign up form-->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

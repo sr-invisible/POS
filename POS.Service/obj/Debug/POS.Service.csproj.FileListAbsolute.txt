@@ -1,0 +1,13 @@
+C:\Users\shema\source\repos\POS\POS.Service\bin\Debug\POS.Service.dll
+C:\Users\shema\source\repos\POS\POS.Service\bin\Debug\POS.Service.pdb
+C:\Users\shema\source\repos\POS\POS.Service\bin\Debug\POS.Data.dll
+C:\Users\shema\source\repos\POS\POS.Service\bin\Debug\POS.Repository.dll
+C:\Users\shema\source\repos\POS\POS.Service\bin\Debug\POS.ViewModel.dll
+C:\Users\shema\source\repos\POS\POS.Service\bin\Debug\POS.Data.pdb
+C:\Users\shema\source\repos\POS\POS.Service\bin\Debug\POS.Repository.pdb
+C:\Users\shema\source\repos\POS\POS.Service\bin\Debug\POS.ViewModel.pdb
+C:\Users\shema\source\repos\POS\POS.Service\obj\Debug\POS.Service.csprojAssemblyReference.cache
+C:\Users\shema\source\repos\POS\POS.Service\obj\Debug\POS.Service.csproj.CoreCompileInputs.cache
+C:\Users\shema\source\repos\POS\POS.Service\obj\Debug\POS.Service.csproj.CopyComplete
+C:\Users\shema\source\repos\POS\POS.Service\obj\Debug\POS.Service.dll
+C:\Users\shema\source\repos\POS\POS.Service\obj\Debug\POS.Service.pdb
